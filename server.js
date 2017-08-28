@@ -16,7 +16,7 @@ const userRoutes = require("./routes/user");
 const profileRoutes = require("./routes/profile");
 
 const session = require("express-session")({
-    secret: "hi my name is stan",
+    secret: 'hi my name is stan',
     resave: false,
     saveUninitialized: true
 });
@@ -39,18 +39,18 @@ app.use((req, res, next) => {
   next();
 })
 
-app.set('views','./public/views');
+// app.set('views','./public/views');
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render(__dirname + '/public/views/index');
 })
 
 app.get('/category*', (req, res) => {
-  res.render('index');
+  res.render(__dirname + '/public/views/index');
 })
 
 app.get('/posts*', (req, res) => {
-  res.render('index');
+  res.render(__dirname + '/public/views/index');
 })
 
 app.use('/user', userRoutes(dbHelper));
