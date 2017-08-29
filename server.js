@@ -5,16 +5,18 @@ const http = require('http');
 const app = express();
 const server = http.createServer(app);
 const cors = require('cors');
+const bodyParser  = require("body-parser");
+
 const knexConfig = require("./knexfile");
 const knex = require("knex")(knexConfig[ENV]);
 const knexLogger = require('knex-logger');
-const bodyParser  = require("body-parser");
+
 const router = express.Router();
-const dbHelper = require("./lib/dbHelper")(knex);
 const apiRoutes = require("./routes/api");
 const userRoutes = require("./routes/user");
 const profileRoutes = require("./routes/profile");
 
+const dbHelper = require("./lib/dbHelper")(knex);
 const session = require("express-session")({
     secret: 'hi my name is stan',
     resave: false,
@@ -40,7 +42,6 @@ app.use((req, res, next) => {
   next();
 })
 
-// app.set('views','./public/views');
 
 app.get('/', (req, res) => {
   res.render(__dirname + '/public/views/index');
@@ -53,6 +54,8 @@ app.get('/category*', (req, res) => {
 app.get('/posts*', (req, res) => {
   res.render(__dirname + '/public/views/index');
 })
+
+app.set('views','./public/views');
 
 app.use('/user', userRoutes(dbHelper));
 app.use('/profile', profileRoutes(dbHelper));

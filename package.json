@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "./node_modules/.bin/nodemon server.js",
     "postinstall": "webpack -p",
-    "start": "node server.js"
+    "start": "./node_modules/.bin/nodemon server.js"
   },
   "keywords": [],
   "author": "",
