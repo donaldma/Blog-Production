@@ -432,7 +432,7 @@ textarea.form-control {
 
 @media only screen and (max-width: 767px) {
   .submit-button {
-    width: 20%; } }
+    width: 30%; } }
 
 .cancel-button {
   float: right;
@@ -457,7 +457,7 @@ textarea.form-control {
 
 @media only screen and (max-width: 767px) {
   .cancel-button {
-    width: 20%; } }
+    width: 30%; } }
 
 .profile-container {
   text-align: center;
@@ -530,7 +530,7 @@ textarea.form-control {
 
 @media only screen and (max-width: 767px) {
   .back-btn {
-    width: 40%; } }
+    width: 45%; } }
 
 .aboutme-img {
   width: 30%;
