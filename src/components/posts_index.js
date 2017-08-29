@@ -100,19 +100,6 @@ class PostsIndex extends Component {
                   read more
                 </Link>
               </div>
-              <div>
-                <h6 className="about-me-title">
-                  <span className="post-sub">
-                    <Moment format="MMMM D, YYYY">{recent[1].created_at}</Moment>
-                  </span>
-                </h6>
-                <h3 className="post-title">{recent[1].title}</h3>
-                <img src={recent[1].photo_url} className="post-img"/> 
-                <p>{this.shorten(recent[1].content)}</p>
-                <Link className="main-button" to={`/posts/${recent[1].id}`}>
-                  read more
-                </Link>    
-              </div>
             </div>
             <div className="col-sm-4 about-me-container">
               <h3 className="about-me-title">
@@ -149,19 +136,6 @@ class PostsIndex extends Component {
               <Link className="main-button" to={`/posts/${recent[0].id}`}>
                 read more
               </Link>
-            </div>
-            <div>
-              <h6 className="about-me-title">
-                <span className="post-sub">
-                  <Moment format="MMMM D, YYYY">{recent[1].created_at}</Moment>
-                </span>
-              </h6>
-              <h3 className="post-title">{recent[1].title}</h3>
-              <img src={recent[1].photo_url} className="post-img"/> 
-              <p>{this.shorten(recent[1].content)}</p>
-              <Link className="main-button" to={`/posts/${recent[1].id}`}>
-                read more
-              </Link>    
             </div>
           </div>
           <div className="col-sm-4 about-me-container">

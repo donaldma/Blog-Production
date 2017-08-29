@@ -11,7 +11,6 @@ const knexConfig = require("./knexfile");
 const knex = require("knex")(knexConfig[ENV]);
 const knexLogger = require('knex-logger');
 
-const router = express.Router();
 const apiRoutes = require("./routes/api");
 const userRoutes = require("./routes/user");
 const profileRoutes = require("./routes/profile");
