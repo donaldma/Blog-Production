@@ -42,15 +42,15 @@ app.use((req, res, next) => {
 // app.set('views','./public/views');
 
 app.get('/', (req, res) => {
-  res.render(__dirname + '/public/views/index');
+  res.sendFile(__dirname + '/public/views/index');
 })
 
 app.get('/category*', (req, res) => {
-  res.render(__dirname + '/public/views/index');
+  res.sendFile(__dirname + '/public/views/index');
 })
 
 app.get('/posts*', (req, res) => {
-  res.render(__dirname + '/public/views/index');
+  res.sendFile(__dirname + '/public/views/index');
 })
 
 app.use('/user', userRoutes(dbHelper));
