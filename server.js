@@ -55,6 +55,10 @@ app.get('/posts*', (req, res) => {
   res.render(__dirname + '/public/views/index');
 })
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/views/index'));
+});
+
 app.set('views','./public/views');
 
 app.use('/user', userRoutes(dbHelper));
