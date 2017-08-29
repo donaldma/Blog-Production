@@ -1,7 +1,6 @@
 const ENV = process.env.NODE_ENV || "development";
 const express = require('express');  
 const http = require('http'); 
-const path = require('path')
 
 const app = express();
 const server = http.createServer(app);
@@ -55,10 +54,6 @@ app.get('/category*', (req, res) => {
 app.get('/posts*', (req, res) => {
   res.render(__dirname + '/public/views/index');
 })
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/views/index'));
-});
 
 app.set('views','./public/views');
 
