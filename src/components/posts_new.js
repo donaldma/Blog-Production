@@ -5,13 +5,6 @@ import { connect } from 'react-redux';
 import { createPost, fetchUser } from '../actions';
 
 class PostsNew extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      redirect: false
-    }
-  }
   componentDidMount() {
     this.props.fetchUser();
   }
@@ -98,17 +91,11 @@ class PostsNew extends Component {
 
   onSubmit = (values) => {
     this.props.createPost(values, () => {
-      this.setState({ redirect: true });      
+      this.props.history.push('/');
     });
   }
 
   render() {
-    if(this.state.redirect) {
-      return(
-        <Redirect to='/' />
-      );
-    }
-    
     if(!this.props.user[0]) {
       return(
         <div className="col-sm-8 col-sm-offset-2 text-center">
