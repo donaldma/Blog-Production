@@ -1,6 +1,7 @@
 const ENV = process.env.ENV || "development";
 const express = require('express');  
 const http = require('http'); 
+const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
@@ -29,7 +30,7 @@ app.use(knexLogger(knex));
 
 app.set('view engine', 'ejs');
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -41,17 +42,17 @@ app.use((req, res, next) => {
 
 // app.set('views','./public/views');
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/views/index');
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/views/index'));
 })
 
-app.get('/category*', (req, res) => {
-  res.sendFile(__dirname + '/public/views/index');
-})
+// app.get('/category*', (req, res) => {
+//   res.sendFile(__dirname + '/public/views/index');
+// })
 
-app.get('/posts*', (req, res) => {
-  res.sendFile(__dirname + '/public/views/index');
-})
+// app.get('/posts*', (req, res) => {
+//   res.sendFile(__dirname + '/public/views/index');
+// })
 
 app.use('/user', userRoutes(dbHelper));
 app.use('/profile', profileRoutes(dbHelper));
