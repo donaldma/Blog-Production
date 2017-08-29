@@ -1,4 +1,4 @@
-const ENV = process.env.ENV || "development";
+const ENV = process.env.NODE_ENV || "development";
 const express = require('express');  
 const http = require('http'); 
 
