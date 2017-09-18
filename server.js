@@ -22,6 +22,10 @@ const session = require("express-session")({
     saveUninitialized: true
 });
 
+setInterval(function() {
+  http.get("http://gabriella-blog.herokuapp.com");
+}, 300000);
+
 app.use(session);
 
 app.use(cors());
