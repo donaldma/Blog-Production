@@ -1,6 +1,6 @@
 const ENV = process.env.NODE_ENV || "development";
-const express = require('express');  
-const http = require('http'); 
+const express = require('express');
+const http = require('http');
 
 const app = express();
 const server = http.createServer(app);
@@ -22,9 +22,9 @@ const session = require("express-session")({
     saveUninitialized: true
 });
 
-setInterval(function() {
-  http.get("http://gabriella-blog.herokuapp.com");
-}, 300000);
+// setInterval(function() {
+//   http.get("http://gabriella-blog.herokuapp.com");
+// }, 300000);
 
 app.use(session);
 
